@@ -59,7 +59,7 @@ a {
     padding: 10px 20px;
     font-family: 'Roboto';
     color: #fff;
-    margin: 30px;
+    margin: 15px;
 }
 .nav-link:hover {
     border-radius: 15px;
@@ -99,6 +99,7 @@ a {
 .text {
     font-size: 200px;
     position: absolute;
+    top: 30%;
     font-family: 'Roboto';
     font-weight: 700;
     text-transform: uppercase;
@@ -115,4 +116,160 @@ a {
     object-fit: contain;
     perspective: 40px;
     transition: .2s;
+}
+.intro-title {
+    font-size: 30px;
+    color: #fff;
+    font-family: 'Roboto';
+}
+.btn-buy{
+    margin-top: 30px;
+    padding: 10px 30px;
+    background-color: #E78A00;
+    border-radius: 15px;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+}
+.btn-buy:hover {
+    background-color: rgb(167, 48, 48);
+}
+
+/* Menu-btn */
+
+.menu-btn{
+    width: 6px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .menu-btn > span,
+  .menu-btn > span::before,
+  .menu-btn > span::after {
+    display: block;
+    position: absolute;
+    top: 30px;
+    width: 20px;
+    height: 2px;
+    background-color: #E78A00;
+    transition-duration: .25s;
+    z-index: 100;
+  }
+  .menu-btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu-btn > span::after {
+    content: '';
+    top: 8px;
+  }
+  .menubox{
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: #ECEFF1;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    transition-duration: .25s;
+  }
+  .menu-item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: .25s;
+  }
+  .menu-item:hover {
+    background-color: #CFD8DC;
+  }
+  #menu-toggle{
+    opacity: 0;
+  }
+  #menu-toggle:checked ~ .menu-btn > span{
+    transform: rotate(45deg);
+  }
+  #menu-toggle:checked ~ .menu-btn > span::before{
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu-toggle:checked ~ .menu-btn > span::after{
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu-toggle:checked ~ .menubox{
+    visibility: visible;
+    left: 0;
+  }
+
+
+/* Media Queries */
+
+@media (min-width: 992px) {
+    .burger-menu {
+        display: none;
+    }       
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .mouse-intro .text {
+        font-size: 150px;
+    }
+    .mouse-product {
+        width: 350px;
+        height: 350px;
+    }
+    .burger-menu {
+        display: none;
+        position: absolute;
+        right: 0;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .mouse-intro .text {
+        font-size: 100px;
+    }
+    .mouse-product {
+        width: 285px;
+        height: 285px;
+    }
+    .header-nav {
+        display: none;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .mouse-intro .text {
+        font-size: 57px;
+    }
+    .mouse-product {
+        width: 200px;
+        height: 200px;
+    }
+    .text {
+        position: absolute;
+        top: 35%;
+    }
+    .intro-title {
+        font-size: 30px;
+        color: #fff;
+        font-family: 'Roboto';
+        text-align: center;
+    }
+    .header-nav {
+        display: none;
+    }
+    .btn-login {
+        display: none;
+    }
 }
